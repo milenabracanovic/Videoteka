@@ -1,0 +1,67 @@
+﻿@model Videoteka.Models.Pozajmica
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Dodaj</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Pozajmica</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.KupacId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @Html.DropDownListFor(model => model.KupacId, ViewBag.ZanrList as SelectList, "Izaberite kupca", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.KupacId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FilmId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @Html.DropDownListFor(model => model.FilmId, ViewBag.FilmId as SelectList, "Izaberite film", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.KupacId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DatumPozajmice, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.DatumPozajmice, "{0:yyyy-MM-dd HH:mm}", new { @class = "form-control", type = "datetime-local" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DatumVracanja, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.DatumVracanja, "{0:yyyy-MM-dd HH:mm}", new { @class = "form-control", type = "datetime-local" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Napomena, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Napomena, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Napomena, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Dodaj" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Nazaad", "Index")
+</div>

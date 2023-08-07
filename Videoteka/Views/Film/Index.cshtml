@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Videoteka.Models.Film>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Dodaj", "Create")
+  
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zanr.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumUnosa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumIzdanja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojNaStanju)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojDostupnih)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Naziv, "Edit", new { id = item.Id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zanr.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumUnosa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumIzdanja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojNaStanju)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojDostupnih)
+        </td>
+        <td>
+            @Html.ActionLink("Izbrisi", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

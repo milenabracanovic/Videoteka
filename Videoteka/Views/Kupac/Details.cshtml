@@ -1,0 +1,49 @@
+﻿@model Videoteka.Models.Kupac
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>    @Html.DisplayFor(model => model.Ime)</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimaObavjestenja)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrimaObavjestenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumRodjenja)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DatumRodjenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipClanstva.Naziv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipClanstva.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipKupca.Naziv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipKupca.Naziv)
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Izmjena", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Nazad", "Index")
+</p>

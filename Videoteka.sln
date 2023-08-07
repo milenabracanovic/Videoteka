@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.33920.267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Videoteka", "Videoteka\Videoteka.csproj", "{69A90194-04C4-46D8-8435-3CDDAE34CC2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideotekaAPI", "VideotekaAPI\VideotekaAPI.csproj", "{7D9A4878-486F-407C-855F-815EF0543730}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69A90194-04C4-46D8-8435-3CDDAE34CC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A90194-04C4-46D8-8435-3CDDAE34CC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A90194-04C4-46D8-8435-3CDDAE34CC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A90194-04C4-46D8-8435-3CDDAE34CC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D9A4878-486F-407C-855F-815EF0543730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D9A4878-486F-407C-855F-815EF0543730}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D9A4878-486F-407C-855F-815EF0543730}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D9A4878-486F-407C-855F-815EF0543730}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14CE4F7B-1659-476F-B3B8-C813C36A7307}
+	EndGlobalSection
+EndGlobal

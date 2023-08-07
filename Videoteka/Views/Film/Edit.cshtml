@@ -1,0 +1,81 @@
+﻿@model Videoteka.Models.Film
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Izmjena</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Film</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Naziv, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ZanrId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ZanrId, ViewBag.ZanrList as SelectList, "Odaberite zanr", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ZanrId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.DatumUnosa, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="datetime-local" id="DatumUnosa" name="DatumUnosa" class="form-control" value="@Model.DatumUnosa.ToString("yyyy-MM-ddTHH:mm")" />
+            @Html.ValidationMessageFor(model => model.DatumUnosa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DatumIzdanja, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="datetime-local" id="DatumIzdanja" name="DatumIzdanja" class="form-control" value="@Model.DatumIzdanja.ToString("yyyy-MM-ddTHH:mm")" />
+            @Html.ValidationMessageFor(model => model.DatumIzdanja, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BrojNaStanju, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BrojNaStanju, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BrojNaStanju, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BrojDostupnih, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.BrojDostupnih, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.BrojDostupnih, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Sačuvaj" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+<br />
+<div>
+    @Html.ActionLink("Nazad", "Index")
+</div>
